@@ -4139,19 +4139,19 @@
   },
   "files": {
     ".Rprofile": {
-      "checksum": "373dbd63f12038e454ede11ac4e24b03"
+      "checksum": "bc8fc824d0cb6e17401302c9f3e8d2d1"
     },
     "_targets.R": {
-      "checksum": "0e695e700bb2323a4f2c85f37305f5f7"
+      "checksum": "d631c056c6d949c11a3f62fd1f6aa417"
     },
     "app.R": {
-      "checksum": "d4103b4dcc8bebfefd99294ba6125f11"
+      "checksum": "2fe139690e99f130ad54a180279fadea"
     },
     "app/js/index.js": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "app/logic/__init__.R": {
-      "checksum": "6f17c44a34cbfd16ff2e3f2211682eba"
+      "checksum": "605b8d7e8af0cc86f9c4d840ab088796"
     },
     "app/logic/data_registry.R": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
@@ -4205,7 +4205,7 @@
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "app/main.R": {
-      "checksum": "e3d8bff4b636cb103bae92dc7699ea5a"
+      "checksum": "1f2589212757c72d9998b9dc7acdee33"
     },
     "app/static/favicon.ico": {
       "checksum": "ff0ed0215d07148b3a5db015e2832d92"
@@ -4214,13 +4214,13 @@
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "app/view/__init__.R": {
-      "checksum": "0647e879c39a0f56f622c968fa0b8fa9"
+      "checksum": "2193b5a1eee08643631362d6fdab9c5f"
     },
     "app/view/accounts/conditions/conditions_map.R": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "app/view/accounts/conditions/conditions_page.R": {
-      "checksum": "e99a560ba3aae104d819b939edc6343f"
+      "checksum": "d8f1d2511f2e559f0b1697036d04d440"
     },
     "app/view/accounts/conditions/conditions_plots.R": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
@@ -4232,7 +4232,7 @@
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "app/view/accounts/extents/extents_page.R": {
-      "checksum": "d636f1f0af32d848e7090409600c568d"
+      "checksum": "dae3afa2c098d4dc6cde670c364b413f"
     },
     "app/view/accounts/extents/extents_plots.R": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
@@ -4244,7 +4244,7 @@
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "app/view/accounts/uses/fisheries_valuation/fisheries_valuation_page.R": {
-      "checksum": "d0b8f6e84f2e2df4cb5b1b6ffa2d1558"
+      "checksum": "9716e3e956d17d5e384a240632a4e9d1"
     },
     "app/view/accounts/uses/fisheries_valuation/fisheries_valuation_plots.R": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
@@ -4256,7 +4256,7 @@
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "app/view/accounts/uses/recreation/recreation_page.R": {
-      "checksum": "4a93859fce16234abfc6a8c433f4adc9"
+      "checksum": "39dcc67103d1fb31b56015c2b2699bd6"
     },
     "app/view/accounts/uses/recreation/recreation_plots.R": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
@@ -4265,19 +4265,19 @@
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "app/view/controls/controls_conditions.R": {
-      "checksum": "2d0b54663d34c7e0fa227218a864c817"
+      "checksum": "bffe2b8a9f037a26860d820575b13d10"
     },
     "app/view/controls/controls_extents.R": {
-      "checksum": "ac6621f813ed898450c58b8dfd887b98"
+      "checksum": "8939a7b005d10b1168b1b199e787839d"
     },
     "app/view/controls/controls_global.R": {
-      "checksum": "ab7d99ae47793ec2c8d5804bc45bdb91"
+      "checksum": "4ef4cb3df72a1d2ac4ff1b78ceb80387"
     },
     "app/view/controls/controls_uses_fisheries_valuation.R": {
-      "checksum": "bab63bbe08af1ee4c9e3940aec6ee9af"
+      "checksum": "09d84202b140d64eb6b5a6eb74b76bb3"
     },
     "app/view/controls/controls_uses_recreation.R": {
-      "checksum": "459ae719b90454728df3942aba30c134"
+      "checksum": "58e44dc97f91dedefca3789876df0a9e"
     },
     "app/view/layout/dashboard_shell.R": {
       "checksum": "bef6e367ada09cc070db19375a374ca9"
@@ -4289,16 +4289,16 @@
       "checksum": "2751cf7501b97fe6f47e6ff938975bfa"
     },
     "config.yml": {
-      "checksum": "9799882392016756f11cef6df75df9c0"
+      "checksum": "3e1a71da884f70a03842c2c68b3e3c7a"
     },
     "dependencies.R": {
       "checksum": "f4d7f5cfe955ab7235aa1f3fa9182995"
     },
     "documentation/ARCHITECTURE.md": {
-      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
+      "checksum": "f6d1afde3c12f4586207f01b2502deeb"
     },
-    "documentation/DATA _SOURCES.md": {
-      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
+    "documentation/DATA_SOURCES.md": {
+      "checksum": "48acf904432c84d93f1cfc92163bab4f"
     },
     "documentation/FILTERS.md": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
@@ -4307,19 +4307,16 @@
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "documentation/GLOSSARY.md": {
-      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
+      "checksum": "17a5cc1a49ba789109ca13be6e5da01d"
     },
     "documentation/HOW_TO_EXTEND.md": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "documentation/MODULE_INDEX.md": {
-      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
+      "checksum": "ea0dd7e154e39fd1ad9967a086f056de"
     },
     "documentation/README.md": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
-    },
-    "documentation/reproducibility_infrastructure.qmd": {
-      "checksum": "d6d3f0e4a4e26b2cc406f456b11bfed8"
     },
     "documentation/STYLE_GUIDE.md": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
@@ -4336,6 +4333,9 @@
     "documentation/TROUBLESHOOTING.md": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
+    "LICENSE": {
+      "checksum": "8eef07a5972bfb5a25232f758c36b5b5"
+    },
     "R/_utils/initialize_project_structure.R": {
       "checksum": "91390f9fe4a103fd1309b74927e9d3d2"
     },
@@ -4343,13 +4343,13 @@
       "checksum": "651f79af675efb9921c4a22806b3517c"
     },
     "README.md": {
-      "checksum": "b50a390b2b3640ffd9859b18db953f6b"
+      "checksum": "3acc5aa1c2eade407e0f00d9ef3b238f"
     },
     "renv.lock": {
       "checksum": "293a764a9842c058643c598a43c2ba3c"
     },
     "rhino.yml": {
-      "checksum": "4f8295c6437069d07ae84698aca26c76"
+      "checksum": "82b3d2a62d8c06d892ca60dbef8e4bab"
     }
   },
   "users": null
