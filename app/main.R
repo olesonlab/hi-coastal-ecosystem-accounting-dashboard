@@ -2,20 +2,19 @@
 
 # Purpose
 # - App entrypoint and wiring diagram.
-# - Owns parent/global reactive state (navigation now; filters later).
+# - Owns parent/global reactive state (navigation now; filter state will be added next).
 # - Wires layout slots (sidebar/body/controlbar) and routes what is shown based on nav scope.
 
 # Rules
 # - Keep main.R short: orchestration only (no data work, no heavy UI).
 # - Parent owns all state; feature and controls modules stay stateless.
-# - Core reactive calls must use shiny::<function>.
+# - Use shiny:: for reactive primitives (reactiveValues, observeEvent, req, renderUI, etc.).
 # - Use box::use() for imports; do not use library().
 
 # Current status (scaffolding)
 # - bs4Dash shell is in place (dashboard_shell).
 # - Sidebar navigation is in place (nav); selection is stored in parent state as state$nav_scope.
-# - Body renders a temporary debug output showing the active scope.
-# - Controlbar routing is implemented (global + scope-specific placeholders); filters will be added next.
+# - Body and controlbar routing are implemented via routing_spec (global + scope-specific placeholders).
 # - No data loading, filtering, maps, tables, or plots yet.
 
 # Imports
