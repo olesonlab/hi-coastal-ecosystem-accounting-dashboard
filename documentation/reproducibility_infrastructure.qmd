@@ -1,0 +1,73 @@
+---
+1
+---
+title: Reproducibility Infrastructure for Building Coastal Ecosystem Accounts for the Main Hawaiian Islands
+author: Alemarie Ceria
+description: "" 
+format: html
+---
+
+## Core Components
+
+### Environment Management with `{renv}`
+
+All R package dependencies are tracked using the `{renv}` package to ensure that collaborators use identical package versions. The R environment is initiated by running: `renv::init()`.
+
+**Included in the GitHub repository:**
+
+-   `renv.lock` — Records exact package versions and sources.
+-   `renv/activate.R` — Bootstraps the `renv` environment when loading the project.
+-   `renv/settings.json` — Stores project-level settings.
+
+**Ignored in GitHub (Added to `.gitignore`):**
+
+-   `renv/library/`
+-   `renv/staging/`
+-   `renv/cache/`
+
+**Workflow:**
+
+1.  **Restore the environment before every session: `renv::restore()`**
+2.  After installing new packages: `renv::snapshot()`
+3.  Check R version consistency: `renv::status()`
+
+**Integration with Rhino and `{targets}`:**
+
+-   `rhino::pkg_install()` installs new packages and updates the lockfile automatically.
+-   The `{targets}` pipeline runs inside the same `{renv}` environment to ensure reproducibility.
+
+**Maintenance:**
+
+-   Remove unused packages: `renv::clean()`
+
+-   Clear outdated cached binaries: `renv::cache_clean()`
+
+### Workflow Management with \`{targets}\`
+
+The `{targets}` package keeps the data processing workflow reproducible and organized. It automates each step of the ETL (extract, transform, load) process, while keeping track of what depends on what. When a data file or function changes, `{targets}` only reruns the steps that need updating, which saves time and guarantees that the results are always up to date. It is initiated by running `targets::use_targets().`
+
+#### Typical Pipeline Execution Flow
+
+download and track raw data → tidy → summarize → export (dashboard inputs)
+
+Each arrow represents a `{targets}` dependency. If one stage changes (e.g., a source URL), only that and downstream stages are rebuilt.
+
+**Steps:**
+
+1.  Create a modular function:
+
+    ``` r
+    helper_function <- function(params) {
+
+    }
+    ```
+
+🧱 1. Reproducibility Infrastructure
+
+These functions and conventions ensure your workflow can be re-run by anyone, anywhere, on any machine.
+
+Function / File Purpose renv::init(), renv::snapshot(), renv::restore() Manages R package dependencies for reproducibility. Always commit renv.lock, activate.R, and settings.json. make_project_structure() (custom helper) Automates creation of standard folders (data/01_raw, data/02_interim, data/03_output, R/, etc.) for new users or datasets. use_targets_pipeline() (in \_targets.R) Standardizes how ETL pipelines run; uses consistent naming and dependency flow between extents, conditions, and fisheries modules. tar_manifest() / tar_visnetwork() Visualize and document pipeline dependencies for transparency and debugging. log_session_info() (custom helper) Saves session metadata (R version, OS, package versions) for auditability. Example: sessioninfo::session_info() → metadata/session_info.txt. generate_metadata() (custom helper) Automatically writes a metadata .yaml or .json file for each dataset created, describing inputs, projection, processing date, and responsible analyst.
+
+🗂 5. Metadata and Documentation Functions Function Description write_metadata_yaml() Writes metadata with fields: title, source, spatial_resolution, CRS, processing_steps, analyst, date. validate_metadata_schema() Checks that metadata conforms to SEEA-EA / INSPIRE ISO 19115 minimal schema. generate_readme() Automatically creates dataset README.md files summarizing inputs, scripts, and dependencies.
+
+🟢 Why: Both UN SEEA EA and ABS stress that every dataset in an environmental account must have clear lineage and provenance metadata (§ 3.6 & § 5.8).

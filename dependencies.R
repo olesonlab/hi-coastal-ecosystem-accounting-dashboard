@@ -1,0 +1,13 @@
+# This file allows packrat (used by rsconnect during deployment) to pick up dependencies.
+library(bs4Dash)
+library(glue)
+library(here)
+library(purrr)
+library(readr)
+library(rhino)
+library(rsconnect)
+library(targets)
+library(thematic)
+library(tibble)
+library(treesitter)
+library(treesitter.r)

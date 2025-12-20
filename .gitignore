@@ -1,0 +1,11 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# renv settings
+renv/library/ 
+renv/staging/
+renv/cache/
+
+R/_utils
