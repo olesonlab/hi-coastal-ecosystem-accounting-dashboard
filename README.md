@@ -2,7 +2,7 @@
 
 An interactive platform for exploring natural capital accounts across the Main Hawaiian Islands, integrating terrestrial and marine datasets to visualize ecosystem extents, conditions, and service flows.
 
-**[Live Demo]([https://olesonlab-mhi-coastal-ecosystem-accounting-dashboard.share.connect.posit.cloud](https://olesonlab-hi-coastal-ecosystem-accounting-dashboard.share.connect.posit.cloud))** · **[Documentation](documentation/)** · **[Oleson Lab](https://www.olesonlab.org/)**
+**[Live Demo](https://olesonlab-hi-coastal-ecosystem-accounting-dashboard.share.connect.posit.cloud)** · **[Documentation](documentation/)** · **[Oleson Lab](https://www.olesonlab.org/)**
 
 ---
 
