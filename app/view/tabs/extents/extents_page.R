@@ -13,7 +13,7 @@
 # - IDs must be namespaced via NS(id); do not hardcode global IDs.
 
 # Current status
-# - Full page with description, choropleth map, bar graph, and extent table.
+# - Full page with description, placeholder boxes for map, bar graph, and extent table.
 # - User selects Ecosystem Type and Year via controlbar filters.
 # - Future work: date range selection, change over time visualizations.
 
@@ -35,13 +35,6 @@ box::use(
   bs4Dash[
     box
   ]
-)
-
-# Modules
-box::use(
-  app/view/tabs/extents/extents_map,
-  app/view/tabs/extents/extents_table,
-  app/view/tabs/extents/extents_plots
 )
 
 #' @export
@@ -155,7 +148,18 @@ ui <- function(id) {
           height = "600px",
           maximizable = TRUE,
           footer = "Choropleth map showing extent area (km\u00b2) by moku, colored relative to all Hawai\u02bbi.",
-          extents_map$ui(ns("extents_map"))
+          div(
+            class = "placeholder-content",
+            icon(
+              "map-marked-alt",
+              class = "placeholder-content-icon"
+            ),
+            h4("Ecosystem Extent Map"),
+            p(
+              "Choropleth map will display when data integration is complete.
+              Select Ecosystem Type and Year from the filter panel."
+            )
+          )
         )
       )
     ),
@@ -178,7 +182,18 @@ ui <- function(id) {
           height = "500px",
           maximizable = TRUE,
           footer = "Bar graph showing ecosystem extent areas (km\u00b2) across all mokus in Hawai\u02bbi.",
-          extents_plots$ui_composition(ns("extents_plots"))
+          div(
+            class = "placeholder-content",
+            icon(
+              "chart-bar",
+              class = "placeholder-content-icon"
+            ),
+            h4("Extent Areas Bar Graph"),
+            p(
+              "Bar graph will display when data integration is complete.
+              Shows extent areas for each moku."
+            )
+          )
         )
       ),
 
@@ -196,7 +211,18 @@ ui <- function(id) {
           height = "500px",
           maximizable = TRUE,
           footer = "Extent values (km\u00b2) overall and by moku for the selected year.",
-          extents_table$ui(ns("extents_table"))
+          div(
+            class = "placeholder-content",
+            icon(
+              "table",
+              class = "placeholder-content-icon"
+            ),
+            h4("Extent Accounting Table"),
+            p(
+              "Table will display when data integration is complete.
+              Shows extent values by island, moku, and year."
+            )
+          )
         )
       )
     ),
@@ -239,12 +265,8 @@ ui <- function(id) {
 }
 
 #' @export
-server <- function(id, filtered_sf, filtered_df, selected_year, selected_island) {
+server <- function(id, filtered_sf = NULL, filtered_df = NULL, selected_year = NULL, selected_island = NULL) {
   moduleServer(id, function(input, output, session) {
-
-    # Wire up child modules
-    extents_map$server("extents_map", filtered_sf)
-    extents_table$server("extents_table", filtered_df, selected_island)
-    extents_plots$server("extents_plots", filtered_df, selected_year, selected_island)
+    # Server logic will be added when data integration is implemented
   })
 }
