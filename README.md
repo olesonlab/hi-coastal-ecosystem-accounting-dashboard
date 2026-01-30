@@ -10,7 +10,7 @@ An interactive platform for exploring natural capital accounts across the Main H
 
 | Account | Description |
 |---------|-------------|
-| **Extents** | Spatial coverage of 16 ecosystem types (land cover, benthic habitats) |
+| **Extents** | Spatial coverage of ecosystem types (terrestrial, marine) |
 | **Conditions** | Health indicators across terrestrial and marine ecosystems |
 | **Uses** | Ecosystem service valuations for fisheries and coastal recreation |
 
@@ -64,7 +64,8 @@ Rscript -e "rhino::app()"
 
 | Component | Tool |
 |-----------|------|
-| Framework | [Rhino](https://appsilon.github.io/rhino/) + [Shiny for R](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/) + [bs4Dash](https://bs4dash.rinterface.com/) |
+| Framework | [Rhino](https://appsilon.github.io/rhino/) + [Shiny for R](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/) |
+| UI | [bs4Dash](https://bs4dash.rinterface.com/) |
 | Pipeline | [targets](https://books.ropensci.org/targets/) |
 | Dependencies | [renv](https://rstudio.github.io/renv/) |
 | Testing | [testthat](https://testthat.r-lib.org/index.html), [Cypress](https://www.cypress.io/#create) |
