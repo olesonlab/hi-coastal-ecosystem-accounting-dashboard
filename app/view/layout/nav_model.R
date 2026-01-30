@@ -10,6 +10,7 @@
 # - Update only when adding a new page
 #   - If new page added, update SCOPES and SCOPE_LABELS together.
 
+HOME = "home"
 EXTENTS = "extents"
 CONDITIONS = "conditions"
 USES_FISHERIES_VALUATION = "uses_fisheries_valuation"
@@ -18,6 +19,7 @@ USES_RECREATION = "uses_recreation"
 SCOPES = c(EXTENTS, CONDITIONS, USES_FISHERIES_VALUATION, USES_RECREATION)
 
 SCOPE_LABELS = c(
+  home = "Home",
   extents = "Extents",
   conditions = "Conditions",
   uses_fisheries_valuation = "Uses > Fisheries Valuation",

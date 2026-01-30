@@ -17,14 +17,29 @@
 
 # Imports
 box::use(
-  shiny[NS],
+  shiny[
+    NS,
+    icon,
+    div,
+    img,
+    p,
+    br,
+    tags,
+    a,
+    tagList
+  ],
   bs4Dash[
+    dashboardPage,
+    dashboardHeader,
+    dashboardBrand,
+    dashboardSidebar,
     dashboardBody,
     dashboardControlbar,
-    dashboardFooter,
-    dashboardHeader,
-    dashboardPage,
-    dashboardSidebar
+    dashboardFooter
+  ],
+  htmltools[
+    HTML,
+    strong
   ]
 )
 
@@ -32,21 +47,102 @@ box::use(
 ui <- function(id, sidebar, body, controlbar) {
   ns <- NS(id)
 
-  # https://bs4dash.rinterface.com/reference/dashboardpage
-  dashboardPage(
-    # https://bs4dash.rinterface.com/reference/dashboardheader
-    header = dashboardHeader(title = "Hawaiʻi CEA"),
-    sidebar = dashboardSidebar(sidebar),
-    body = dashboardBody(body),
-    controlbar = dashboardControlbar(controlbar),
-    footer = dashboardFooter(),
-    fullscreen = TRUE,
-    help = TRUE,
-    dark = TRUE,
-    scrollToTop = TRUE
-  )
+  tagList(
+    # load Rhino-compiled CSS
+    tags$head(
+      tags$link(
+        rel = "stylesheet",
+        type = "text/css",
+        href = "static/css/app.min.css"
+      )
+    ),
 
-  # # https://bs4dash.rinterface.com/reference/dashboardpage
+    # https://bs4dash.rinterface.com/reference/dashboardpage
+    dashboardPage(
+      # https://bs4dash.rinterface.com/reference/dashboardheader
+      header = dashboardHeader(
+        title = dashboardBrand(
+          title = HTML("<br>"),
+          image = "static/logos/cea-logo.png"
+        ),
+        leftUi = NULL,
+        rightUi = NULL,
+        border = TRUE,
+        compact = FALSE,
+        sidebarIcon = shiny::icon("bars"),
+        controlbarIcon = shiny::icon("sliders"),
+        fixed = TRUE
+      ),
+      # Use injected sidebar from nav module
+      sidebar = dashboardSidebar(
+        width = NULL,
+        status = "olive",
+        elevation = 4,
+        collapsed = FALSE,
+        minified = TRUE,
+        expandOnHover = TRUE,
+        fixed = TRUE,
+        id = NULL,
+        customArea = NULL,
+        sidebar
+      ),
+      body = dashboardBody(body),
+      controlbar = dashboardControlbar(controlbar),
+    footer = dashboardFooter(
+      left = div(
+        class = "footer",
+
+        # Partner & Funder Logos
+        div(
+          class = "footer-logos",
+          img(
+            src = "static/logos/uhm-logo.png",
+            alt = "UHM logo",
+            class = "footer-single-logo"
+          )
+          # Add other logos here
+        ),
+
+        # Project Title & Grant
+        div(
+          class = "footer-text",
+          p(
+            strong("[Project Title]"),
+            br(),
+            "Funded by [Funder Name] (Grant [Grant Number])"
+          ),
+          p(HTML(
+            "© 2025 University of Hawaiʻi at Mānoa. All rights reserved."
+          )),
+          p(HTML(
+            'Developed by <a href="https://www.olesonlab.org/" target="_blank" title="Oleson Lab Website">Oleson Lab Team</a>'
+          ))
+        ),
+
+        # Quick Links
+        div(
+          class = "footer-quick-links",
+          a(
+            href = "https://github.com/olesonlab/coastal_ecosystem_accounting",
+            target = "_blank",
+            icon("github", class = "fa-2x"),
+            title = "GitHub Repository"
+          )
+        )
+      ),
+      right = NULL,
+      fixed = FALSE
+    ),
+      fullscreen = TRUE,
+      help = TRUE,
+      dark = NULL,
+      scrollToTop = TRUE
+    )
+  )
+}
+
+# Reference template (commented out)
+# # https://bs4dash.rinterface.com/reference/dashboardpage
   # dashboardPage(
   #   # https://bs4dash.rinterface.com/reference/dashboardheader
   #   header = dashboardHeader(
@@ -148,4 +244,3 @@ ui <- function(id, sidebar, body, controlbar) {
   #   dark = TRUE,
   #   scrollToTop = TRUE
   # )
-}

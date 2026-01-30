@@ -17,7 +17,7 @@
 
 # Imports
 box::use(
-  shiny[NS, moduleServer],
+  shiny[NS, moduleServer, icon],
   bs4Dash[
     sidebarMenu,
     menuItem,
@@ -27,8 +27,9 @@ box::use(
 # Modules
 box::use(
   app/view/layout/nav_model[
-    CONDITIONS,
+    HOME,
     EXTENTS,
+    CONDITIONS,
     USES_FISHERIES_VALUATION,
     USES_RECREATION
   ]
@@ -42,17 +43,29 @@ ui <- function(id) {
   sidebarMenu(
     id = ns("sidebar"),
     menuItem(
-      "Extents",
-      tabName = EXTENTS
+      "Home",
+      tabName = HOME,
+      icon = icon("home")
     ),
     menuItem(
-      "Conditions",
-      tabName = CONDITIONS
+      "Ecosystem Extents",
+      tabName = EXTENTS,
+      icon = icon("layer-group")
     ),
     menuItem(
-      "Uses",
-      menuSubItem("Fisheries Valuation", tabName = USES_FISHERIES_VALUATION),
-      menuSubItem("Recreation", tabName = USES_RECREATION)
+      "Ecosystem Conditions",
+      tabName = CONDITIONS,
+      icon = icon("heartbeat")
+    ),
+    menuItem(
+      "Fisheries Valuation",
+      tabName = USES_FISHERIES_VALUATION,
+      icon = icon("fish")
+    ),
+    menuItem(
+      "Recreation Services",
+      tabName = USES_RECREATION,
+      icon = icon("umbrella-beach")
     )
   )
 }

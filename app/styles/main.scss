@@ -1,0 +1,500 @@
+// Footer Section
+.footer-text {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.footer-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.footer-single-logo {
+    height: 48px;
+    margin: 0 12px;
+}
+
+.footer-quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer a {
+    color: #22806A;
+    text-decoration: underline;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer a:hover,
+.footer a:focus {
+    background: rgb(27, 100, 83);
+    padding: 0.25rem 0.75rem;
+    color: #fff;
+    text-decoration: underline;
+}
+
+// Home Page - About Our Project Section
+.about-our-project-section {
+    padding: 32px 16px 32px 16px;
+}
+
+.about-our-project-intro {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* tighter gap for small screens */
+  flex-wrap: wrap; /* allows wrapping if text is too long */
+}
+
+.about-our-project-icon {
+  font-size: 48px; /* keep icon reasonable size */
+  flex-shrink: 0;  /* prevents icon from shrinking */
+  color: #3A7B44;  
+}
+
+/* Make the title responsive */
+.about-our-project-title {
+  font-size: clamp(1.2rem, 4vw, 2rem); /* scales between small and large */
+  line-height: 1.2;
+  margin: 0;
+  flex: 1; /* lets it take remaining space */
+  word-break: break-word; /* avoids overflow */
+}
+
+.about-our-project-text {
+    font-size: 1.15em;
+    color: #444;
+}
+
+.about-our-project-notes {
+    color: #888;
+    font-size: 0.85em;
+    font-style: italic;
+    margin-top: 16px;
+    margin-left: 15px; 
+    margin-right: 15px; 
+}
+
+.about-our-project-notes-icon {
+    color: #3A7B44;
+}
+
+/* On very small screens (<=400px), keep icon left + text smaller */
+@media (max-width: 400px) {
+  .about-our-project-intro {
+    gap: 12px;
+  }
+  .about-our-project-title {
+    font-size: 1.55rem;
+  }
+}
+
+// Home Page - Metric Boxes
+.metric-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;    /* allow wrapping to column */
+  gap: 20px;          /* space between boxes */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.metric-box {
+  position: relative; /* allows absolute positioning inside */
+  color: #fff;
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 110px;
+}
+
+.metric-box .info-icon {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 1rem;   /* smaller than default */
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.metric-box .info-icon:hover {
+  opacity: 1;
+}
+
+/* per-card gradients */
+.moku-metric-box {
+  background: linear-gradient(135deg, #3A7B44 0%, #66bb6a 100%);
+}
+
+.et-metric-box {
+  background: linear-gradient(135deg, #0d47a1 0%, #4dd0e1 100%);
+}
+
+.metric-value {
+    font-size: 3.5em; 
+    font-weight: bold;
+}
+
+.metric-label {
+    font-size: 1em; 
+    opacity: 0.9;
+}
+
+// Home Page - Team Profiles Section
+.team-profiles-section {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.team-profiles-single-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px #0001;
+    padding: 24px;
+    text-align: center;
+    width: 250px;
+    min-width: 220px;
+    margin-bottom: 24px;
+}
+
+.team-profiles-headshot {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.team-profiles-role {
+    font-size: 0.95em;
+    color: #22806A;
+    margin-bottom: 6px;
+}
+
+.team-profiles-affiliation {
+    font-size: 0.92em;
+    color: #888;
+}
+
+.team-profiles-email {
+    font-size: 0.92em;
+    color: #22806A;
+    text-decoration: none;
+}
+
+// Fisheries Valuation Page - Description Section
+.fisheries-value-box {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.fisheries-metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.fisheries-metric-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+// Placeholder Content
+.placeholder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #999;
+    background: #fafbfc;
+    border: 1px dashed #eee;
+    min-height: 250px;
+    text-align: center;
+}
+
+.placeholder-content-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #bcbcbc;
+}
+
+// Box Settings
+.card-header .btn-tool,
+.box-header .btn-tool {
+    color: #218838 !important;
+    /* Bootstrap success green */
+}
+
+.card-header .btn-tool:hover,
+.box-header .btn-tool:hover {
+    color: #145214 !important;
+    /* darker on hover */
+}
+
+// Link colors 
+a, a:visited {
+  color: #1D70B8;
+}
+
+a:hover, a:focus {
+  color: darken(#1D70B8, 10%); /* slightly darker on hover */
+  text-decoration: underline;
+}
+
+/* Toggle switch ON background (track) */
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #1D70B8 !important;  /* your blue */
+  border-color: #1D70B8 !important;
+}
+
+/* Keep the circle (thumb) grey */
+.custom-control-input:checked ~ .custom-control-label::after {
+  background-color: #ccc !important;  /* light grey thumb */
+}
+
+// Controlbar Styling
+.control-sidebar {
+  width: 300px !important;
+}
+
+.control-sidebar .form-group {
+  margin-bottom: 1rem;
+}
+
+/* Center filter controls in the controlbar */
+.control-sidebar .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; // centers the label text
+}
+
+/* Center the actual inputs (works for plain selects + selectize) */
+.control-sidebar .form-group .form-control,
+.control-sidebar .form-group .selectize-control {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;      // pick what you want
+  max-width: 280px; // optional: keeps it from getting too wide
+}
+
+/* Make the selectize input itself centered (text + caret area) */
+.control-sidebar .selectize-input {
+  text-align: center;
+}
+
+// Apply Filters button styling
+.btn-olive {
+  background-color: #6c8e23;
+  border-color: #6c8e23;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.btn-olive:hover,
+.btn-olive:focus {
+  background-color: #5a7a1d;
+  border-color: #5a7a1d;
+  color: #fff;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+// ===========================================
+// Fisheries Filters Panel Styling
+// Override control-sidebar defaults
+// ===========================================
+
+.control-sidebar .fisheries-filters-panel {
+  padding: 8px 12px !important;
+}
+
+// Active Filters Box
+.control-sidebar .active-filters-box {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+  border: 1px solid #dee2e6 !important;
+  border-left: 4px solid #1D70B8 !important;
+  border-radius: 6px !important;
+  padding: 12px 14px !important;
+  margin-bottom: 18px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+}
+
+.control-sidebar .active-filters-title {
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: #1D70B8 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin: 0 0 8px 0 !important;
+  text-align: left !important;
+}
+
+.control-sidebar .active-filters-items {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px 8px !important;
+}
+
+.control-sidebar .filter-item {
+  font-size: 0.7rem !important;
+  color: #495057 !important;
+  background-color: #fff !important;
+  padding: 2px 6px !important;
+  border-radius: 3px !important;
+  border: 1px solid #dee2e6 !important;
+  white-space: nowrap !important;
+  display: inline-block !important;
+}
+
+// Filters Section Header
+.control-sidebar .filters-section-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 6px !important;
+  padding: 0 0 8px 0 !important;
+  margin-bottom: 14px !important;
+  border-bottom: 2px solid #1D70B8 !important;
+}
+
+.control-sidebar .filters-icon {
+  color: #1D70B8 !important;
+  font-size: 0.85rem !important;
+}
+
+.control-sidebar .filters-label {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #1D70B8 !important;
+}
+
+// Override centered form-group for fisheries panel
+.control-sidebar .fisheries-filters-panel .form-group {
+  display: block !important;
+  margin-bottom: 14px !important;
+  text-align: left !important;
+  align-items: flex-start !important;
+}
+
+.control-sidebar .fisheries-filters-panel .form-group > label,
+.control-sidebar .fisheries-filters-panel .control-label {
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #495057 !important;
+  margin-bottom: 4px !important;
+  text-align: left !important;
+  display: block !important;
+}
+
+.control-sidebar .fisheries-filters-panel .form-group .form-control,
+.control-sidebar .fisheries-filters-panel .form-group .selectize-control {
+  width: 100% !important;
+  max-width: 90% !important;
+  margin: 0 !important;
+}
+
+.control-sidebar .fisheries-filters-panel .selectize-input {
+  text-align: left !important;
+  border-radius: 4px !important;
+  border: 1px solid #ced4da !important;
+  padding: 5px 8px !important;
+  font-size: 0.8rem !important;
+  min-height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  background: #fff !important;
+}
+
+.control-sidebar .fisheries-filters-panel .selectize-input:focus,
+.control-sidebar .fisheries-filters-panel .selectize-input.focus {
+  border-color: #1D70B8 !important;
+  box-shadow: 0 0 0 2px rgba(29, 112, 184, 0.15) !important;
+}
+
+.control-sidebar .fisheries-filters-panel .selectize-dropdown {
+  border-radius: 4px !important;
+  border: 1px solid #ced4da !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.control-sidebar .fisheries-filters-panel .selectize-dropdown-content .option {
+  padding: 6px 8px !important;
+  font-size: 0.8rem !important;
+}
+
+.control-sidebar .fisheries-filters-panel .selectize-dropdown-content .option.active {
+  background-color: #1D70B8 !important;
+  color: #fff !important;
+}
+
+// Buttons container
+.control-sidebar .fisheries-filters-buttons {
+  margin-top: 18px !important;
+  padding-top: 14px !important;
+  border-top: 1px solid #e9ecef !important;
+}
+
+// Apply Filters Button
+.control-sidebar .btn-apply-filters {
+  background-color: #1D70B8 !important;
+  border: none !important;
+  color: #fff !important;
+  padding: 8px 14px !important;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 4px rgba(29, 112, 184, 0.3) !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+.control-sidebar .btn-apply-filters:hover,
+.control-sidebar .btn-apply-filters:focus {
+  background-color: #155a8a !important;
+  color: #fff !important;
+  box-shadow: 0 4px 8px rgba(29, 112, 184, 0.4) !important;
+}
+
+// Reset All Button
+.control-sidebar .btn-reset-filters {
+  background-color: transparent !important;
+  border: 1px solid #dee2e6 !important;
+  color: #6c757d !important;
+  margin-top: 6px !important;
+  padding: 6px 14px !important;
+  font-weight: 500 !important;
+  font-size: 0.75rem !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+.control-sidebar .btn-reset-filters:hover,
+.control-sidebar .btn-reset-filters:focus {
+  background-color: #f8f9fa !important;
+  border-color: #adb5bd !important;
+  color: #495057 !important;
+}
+

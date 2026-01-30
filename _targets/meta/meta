@@ -1,0 +1,39 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+export_rds|function|b5d8931bdb74b1fd
+moku_names_lut|stem|4f0e2dc16a9bf429|d957d620385655dd|233751e3cb09c732|-1884176205||t20481.8273643817s|s872b|872|rds|local|vector|||0.25||
+et_areas_combined|stem|f95fbd9dbf42a8bb|26df5656c461aa28|177d2845a2ad6501|-1116290879||t20481.8273650139s|s5369b|5369|rds|local|vector|||0||
+mokus_terrestrial|stem|b906cf90b8635ec0|af334f8c87cd21de|99ce45bac8d48b43|193438835||t20481.8273825456s|s105419b|105419|rds|local|vector|||1.45|x is already of type POLYGON.|
+mokus_marine|stem|845fe80405f3c5eb|33596ff4b720514b|51a403114239eff2|-609009596||t20481.8273855101s|s71792b|71792|rds|local|vector|||0.18|x is already of type POLYGON.|
+mokus_combined|stem|3f3a4fb21e889e34|e61ee8b7f09bbe90|f9cd251031271934|1587448284||t20481.827387512s|s175835b|175835|rds|local|vector|||0.02||
+mokus_extents|stem|cf2530b0ae1a00a7|f4bc0d71002ece00|1756a78320b134bc|-2075355337||t20481.8273902559s|s233361b|233361|rds|local|vector|||0.12||
+export_extents_rds|stem|cf2530b0ae1a00a7|cd99038386ef41a9|a9c00fd2b7f8f100|1764670468|data/03_processed/extents/mokus_extents.rds|t20481.8273976581s|s233361b|233361|file|local|vector|||0.08||
+fix_geom|function|03dde4f4477edd9f
+combine_et_areas|function|74221a02cbe7eaea
+export_sf_as_csv|function|99bc4f79dfa17507
+read_csv_clean|function|85016959a8c487e7
+attach_moku_names|function|26f1d7dffad38b92
+join_mokus_extents|function|393cf2d7da280df2
+join_mokus_fisheries|function|188296edcfefbe09
+validate_crs|function|30d8db453764bac7
+join_mokus_recreation|function|4b20a60120b7c1d1
+combine_mokus|function|d9a5aefb0125a8b3
+standardize_name|function|5ff41fe061d3aebe
+join_mokus_conditions|function|daa77e059c91bd8b
+paths_out|object|595eb60fd0459a48
+export_gpkg|function|0d04a41d642300de
+config|object|97b6b2a88449287c
+paths_in|object|f7efc68aafdeb12e
+export_csv|function|8b351004f6d7d9c8
+read_sf_clean|function|2a9abd39439d0119
+load_et_areas_terrestrial|function|432fcde25d3bff09
+load_et_areas_marine|function|ad3078de9f2f7863
+clean_mokus|function|f4abb81a2a821455
+build_moku_names_lut|function|e129b77561902557
+mokus_marine_raw|stem|fa1116d33b8285cb|6a15af64640cad65|e738defe91246b13|-1500316657||t20481.8340517809s|s64973b|64973|rds|local|vector|||1.13|package 'here' was built under R version 4.5.1. package 'tidyr' was built under R version 4.5.2. package 'stringr' was built under R version 4.5.2. package 'glue' was built under R version 4.5.2. package 'sf' was built under R version 4.5.2|
+mokus_terrestrial_raw|stem|f91e90090d0876be|d9a6be3ab7721e69|e738defe91246b13|1342715715||t20481.8340546368s|s105476b|105476|rds|local|vector|||0.05||
+et_areas_marine|stem|e84055680e94a2b0|92fe0756bd0bee67|c187a755abfa9312|1702990632||t20481.8340586686s|s1859b|1859|rds|local|vector|||0.25||
+et_areas_terrestrial|stem|f145c96ac5e09e0a|28f2d8ef41066dd9|3a1ab816adbe9979|515164240||t20481.8340611698s|s3901b|3901|rds|local|vector|||0.14||
+export_moku_names|stem|3ef36cc1ef7519f8|f000f807d118d892|34c4b73415c94482|-331653498|data/02_interim/moku_names_lut.csv|t20481.8340618082s|s1702b|1702|file|local|vector|||0.04||
+export_mokus|stem|8eb4b69bf0764658|49a3b10aa79167bf|105f8c700a45b19e|2032261610|data/02_interim/mokus_combined.gpkg|t20481.8340633996s|s413696b|413696|file|local|vector|||0.11||
+export_extents_csv|stem|59f91954a507f8f2|62b6378f7043c7e2|889bafcf012fb1ef|-1612463797|data/03_processed/extents/mokus_extents.csv|t20481.8340694005s|s126362b|126362|file|local|vector|||0.46||
+export_extents_gpkg|stem|b0317a4ebff24781|8cc2cbda82415d5a|1874bf84a315127e|-1772789098|data/03_processed/extents/mokus_extents.gpkg|t20481.8340723581s|s7057408b|7057408|file|local|vector|||0.23||

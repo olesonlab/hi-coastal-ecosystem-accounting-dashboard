@@ -9,11 +9,18 @@
 # - No Shiny side effects, no data loading.
 
 box::use(
-  app/view/layout/nav_model[SCOPES],
-  app/view/accounts/extents/extents_page,
-  app/view/accounts/conditions/conditions_page,
-  app/view/accounts/uses/fisheries_valuation/fisheries_valuation_page,
-  app/view/accounts/uses/recreation/recreation_page,
+  app/view/layout/nav_model[
+    HOME,
+    EXTENTS,
+    CONDITIONS,
+    USES_FISHERIES_VALUATION,
+    USES_RECREATION
+  ],
+  app/view/tabs/home/home_page,
+  app/view/tabs/extents/extents_page,
+  app/view/tabs/conditions/conditions_page,
+  app/view/tabs/uses/fisheries_valuation/fisheries_valuation_page,
+  app/view/tabs/uses/recreation/recreation_page,
   app/view/controls/controls_extents,
   app/view/controls/controls_conditions,
   app/view/controls/controls_uses_fisheries_valuation,
@@ -22,26 +29,22 @@ box::use(
 
 #' @export
 page_modules_by_scope <- function() {
-  stats::setNames(
-    list(
-      extents_page,
-      conditions_page,
-      fisheries_valuation_page,
-      recreation_page
-    ),
-    SCOPES
+  list(
+    home = home_page,
+    extents = extents_page,
+    conditions = conditions_page,
+    uses_fisheries_valuation = fisheries_valuation_page,
+    uses_recreation = recreation_page
   )
 }
 
 #' @export
 control_modules_by_scope <- function() {
-  stats::setNames(
-    list(
-      controls_extents,
-      controls_conditions,
-      controls_uses_fisheries_valuation,
-      controls_uses_recreation
-    ),
-    SCOPES
+  list(
+    home = NULL,
+    extents = controls_extents,
+    conditions = controls_conditions,
+    uses_fisheries_valuation = controls_uses_fisheries_valuation,
+    uses_recreation = controls_uses_recreation
   )
 }

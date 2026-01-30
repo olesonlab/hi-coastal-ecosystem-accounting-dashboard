@@ -13,29 +13,26 @@
 
 # Current status
 # - Placeholder controls scaffold only.
-# - Routed by nav scope in main.R; global controls render separately.
 
 # Imports
 box::use(
   shiny[NS, tagList, h4, p]
 )
-# Modules
-# box::use(
-  
-# )
 
 #' @export
 ui <- function(id) {
   ns <- NS(id)
 
   tagList(
-    h4("Conditions filters"),
-    p("Placeholder: controls_conditions.R")
+    h4("Conditions Filters"),
+    p("Placeholder: filters coming soon.")
   )
 }
 
-# #' @export
-# server <- function(id) {
-#   moduleServer(id, function(input, output, session) {
-#   })
-# }
+#' @export
+server <- function(id) {
+  shiny::moduleServer(id, function(input, output, session) {
+    # Return empty list for now
+    list()
+  })
+}

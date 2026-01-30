@@ -76,22 +76,16 @@ Shiny applications can become difficult to debug when state is scattered across 
 
 ```r
 state <- shiny::reactiveValues(
+  # Navigation
+  nav_scope = HOME,
 
-  nav_scope = "extents"
-)
-```
-
-### Planned State Additions
-
-```r
-state <- shiny::reactiveValues(
-  nav_scope = "extents",
-  filters = list(
-    island = NULL,
-    moku = NULL,
-    year_range = c(2000, 2020),
-    ecosystem_type = NULL
-  )
+  # Applied filter values (updated on "Apply Filters" click)
+  # These use the filter key columns (island, moku), not the display columns (olelo)
+  applied_island = filter_choices$islands[1],
+  applied_moku = filter_choices$mokus[1],
+  applied_year = max(filter_choices$years),
+  applied_realm = filter_choices$realms[1],
+  applied_ecosystem_type = filter_choices$ecosystem_types[1]
 )
 ```
 
@@ -229,8 +223,8 @@ Contains Shiny UI code organized by function:
 | Subdirectory | Purpose |
 |--------------|---------|
 | `layout/` | Dashboard shell, navigation, scope definitions |
-| `accounts/` | Page modules for each account type |
-| `controls/` | Controlbar modules (global + scope-specific) |
+| `tabs/` | Page modules for each account type |
+| `controls/` | Controlbar modules (global + scope-specific); currently placeholders |
 
 ### `data/` — Staged Data Artifacts
 
@@ -251,6 +245,24 @@ Contains Shiny UI code organized by function:
 3. **Dependency tracking** — DAG ensures correct execution order
 
 ### Pipeline Structure (Planned)
+
+Example of helper functions in `R/`:
+
+```r
+# R/utils_io.R
+#' Read and clean shapefile
+#' @param path Path to shapefile
+#' @return sf object with cleaned column names
+read_sf_clean <- function(path) {
+
+  stopifnot(fs::file_exists(path))
+ 
+  sf::st_read(path, quiet = TRUE) |>
+    janitor::clean_names()
+}
+```
+
+Targets pipeline:
 
 ```r
 # _targets.R
@@ -297,22 +309,13 @@ cd tests/cypress && npx cypress open
 
 ---
 
-## Technology Choices
-
-| Component | Choice | Rationale |
-|-----------|--------|-----------|
-| Framework | Rhino | Enforces modular structure, `box::use()` for explicit imports |
-| UI Library | bs4Dash | Bootstrap 4 dashboard components, controlbar support |
-| Pipeline | targets | DAG-based, cached, integrates with R ecosystem |
-| Dependencies | renv | Lockfile ensures reproducible local environments |
-| Deployment | Posit Connect | Managed hosting, manifest-based builds |
-
-### Why Rhino Over Vanilla Shiny?
-
-1. **Enforced modularity** — `box::use()` requires explicit imports
-2. **No `library()` pollution** — Dependencies are scoped to modules
-3. **Built-in conventions** — `logic/` and `view/` separation is structural
-4. **Testing support** — Designed for testable module architecture
+| Component    | Choice              | Rationale                                                                                                                                                                                    |
+| ------------ | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Framework    | Rhino + Shiny for R | **Shiny** provides the reactive web application runtime and server model; **Rhino** sits on top to enforce modular structure, application conventions, and explicit imports via `box::use()` |
+| UI Library   | bs4Dash             | Bootstrap 4–based dashboard components with layout primitives and controlbar support, integrated into Shiny UI                                                                               |
+| Pipeline     | targets             | DAG-based pipeline with caching and tight integration into the R ecosystem for reproducible data workflows                                                                                   |
+| Dependencies | renv                | Lockfile-based dependency management to ensure reproducible local and deployed environments                                                                                                  |
+| Deployment   | Posit Connect       | Managed hosting for Shiny applications with manifest-based builds and CI-friendly deployment                                                                                                 |
 
 ---
 

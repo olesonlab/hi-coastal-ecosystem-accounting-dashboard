@@ -2,7 +2,7 @@
 
 # Purpose
 # - Defines the scope-specific controlbar UI for the "Extents" section.
-# - Provides filter/input controls that affect what the Extents page renders.
+# - Provides Realm and Ecosystem Type filters, plus the Apply Filters button.
 
 # Rules
 # - UI-only module: define inputs and layout only.
@@ -13,29 +13,30 @@
 
 # Current status
 # - Placeholder controls scaffold only.
-# - Routed by nav scope in main.R; global controls render separately.
 
 # Imports
 box::use(
   shiny[NS, tagList, h4, p]
 )
-# Modules
-# box::use(
-  
-# )
 
 #' @export
-ui <- function(id) {
+ui <- function(id, realm_choices = NULL, ecosystem_type_choices = NULL) {
   ns <- NS(id)
 
   tagList(
-    h4("Extents filters"),
-    p("Placeholder: controls_extents.R")
+    h4("Extents Filters"),
+    p("Placeholder: filters coming soon.")
   )
 }
 
-# #' @export
-# server <- function(id) {
-#   moduleServer(id, function(input, output, session) {
-#   })
-# }
+#' @export
+server <- function(id) {
+  shiny::moduleServer(id, function(input, output, session) {
+    # Return empty list for now
+    list(
+      realm = shiny::reactive(NULL),
+      ecosystem_type = shiny::reactive(NULL),
+      apply = shiny::reactive(NULL)
+    )
+  })
+}

@@ -1,6 +1,6 @@
 # Hawaiʻi Coastal Ecosystem Accounting Dashboard
 
-An interactive platform for exploring natural capital accounts across the Main Hawaiian Islands, integrating 30+ terrestrial and marine datasets to visualize ecosystem extents, conditions, and service flows.
+An interactive platform for exploring natural capital accounts across the Main Hawaiian Islands, integrating terrestrial and marine datasets to visualize ecosystem extents, conditions, and service flows.
 
 **[Live Demo](https://olesonlab-mhi-coastal-ecosystem-accounting-dashboard.share.connect.posit.cloud)** · **[Documentation](documentation/)** · **[Oleson Lab](https://www.olesonlab.org/)**
 
@@ -11,7 +11,7 @@ An interactive platform for exploring natural capital accounts across the Main H
 | Account | Description |
 |---------|-------------|
 | **Extents** | Spatial coverage of 16 ecosystem types (land cover, benthic habitats) |
-| **Conditions** | 30+ health indicators across terrestrial and marine ecosystems |
+| **Conditions** | Health indicators across terrestrial and marine ecosystems |
 | **Uses** | Ecosystem service valuations for fisheries and coastal recreation |
 
 ## Architecture
@@ -26,7 +26,6 @@ An interactive platform for exploring natural capital accounts across the Main H
                               │ reads from
 ┌──────────────────────────────────────────────────────────────┐
 │  ETL Pipeline ({targets})                                    │
-│  • Heavy geospatial processing                               │
 │  • Produces cached, reproducible artifacts                   │
 └──────────────────────────────────────────────────────────────┘
 ```
@@ -40,7 +39,7 @@ See [ARCHITECTURE.md](documentation/ARCHITECTURE.md) for system design details.
 │   ├── logic/        # Data processing, validation, routing
 │   └── view/         # UI modules (pages, controls, layout)
 ├── data/             # 01_raw → 02_interim → 03_processed
-├── documentation/    # Architecture, data sources, glossary
+├── documentation/    # Architecture, data sources/inventory
 ├── tests/            # testthat (unit), Cypress (e2e)
 └── _targets.R        # ETL pipeline definition
 ```
@@ -65,11 +64,11 @@ Rscript -e "rhino::app()"
 
 | Component | Tool |
 |-----------|------|
-| Framework | Rhino + bs4Dash |
-| Pipeline | targets |
-| Dependencies | renv |
-| Testing | testthat, Cypress |
-| Deployment | Posit Connect |
+| Framework | [Rhino](https://appsilon.github.io/rhino/) + [Shiny for R](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/) + [bs4Dash](https://bs4dash.rinterface.com/) |
+| Pipeline | [targets](https://books.ropensci.org/targets/) |
+| Dependencies | [renv](https://rstudio.github.io/renv/) |
+| Testing | [testthat](https://testthat.r-lib.org/index.html), [Cypress](https://www.cypress.io/#create) |
+| Deployment | [Posit Connect](https://connect.posit.cloud/) |
 
 ## Documentation
 
@@ -77,8 +76,6 @@ Rscript -e "rhino::app()"
 |----------|-------------|
 | [ARCHITECTURE](documentation/ARCHITECTURE.md) | System design and data flow |
 | [DATA_SOURCES](documentation/DATA_SOURCES.md) | Dataset specifications |
-| [MODULE_INDEX](documentation/MODULE_INDEX.md) | Module reference |
-| [GLOSSARY](documentation/GLOSSARY.md) | Domain and technical terms |
 
 ## License
 

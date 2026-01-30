@@ -2,7 +2,7 @@
 
 # Purpose
 # - Defines the global controlbar UI that applies across all dashboard sections (scopes).
-# - Provides shared filters/inputs used by multiple pages (e.g., geography/time selectors).
+# - Provides shared filters: Island, Moku (cascading), and Year.
 
 # Rules
 # - UI-only module: define inputs and layout only.
@@ -13,29 +13,30 @@
 
 # Current status
 # - Placeholder controls scaffold only.
-# - Rendered in the controlbar for all scopes; scope-specific controls are rendered beneath it.
 
 # Imports
 box::use(
   shiny[NS, tagList, h4, p]
 )
-# Modules
-# box::use(
-  
-# )
 
 #' @export
-ui <- function(id) {
+ui <- function(id, island_choices = NULL, moku_choices = NULL, year_choices = NULL) {
   ns <- NS(id)
 
   tagList(
-    h4("Global filters"),
-    p("Placeholder: controls_global.R")
+    h4("Global Filters"),
+    p("Placeholder: filters coming soon.")
   )
 }
 
-# #' @export
-# server <- function(id) {
-#   moduleServer(id, function(input, output, session) {
-#   })
-# }
+#' @export
+server <- function(id, extents_df = NULL) {
+  shiny::moduleServer(id, function(input, output, session) {
+    # Return empty list for now
+    list(
+      island = shiny::reactive(NULL),
+      moku = shiny::reactive(NULL),
+      year = shiny::reactive(NULL)
+    )
+  })
+}

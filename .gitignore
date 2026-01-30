@@ -9,3 +9,5 @@ renv/staging/
 renv/cache/
 
 R/_utils
+documentation/trash/
+notebooks/ignore/
